@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="static/styles.css">  <!-- Link to CSS file -->
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Prediction Result</h1>
+        </div>
+
+        <div class="result">
+            <p><strong>Condition Predicted:</strong> {{ condition }}</p>
+            <h2>Top Suggested Drugs:</h2>
+            <ul>
+                {% for drug in drugs %}
+                <li>{{ drug }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <a href="/" class="back-btn">Go Back</a>
+    </div>
+</body>
+</html>

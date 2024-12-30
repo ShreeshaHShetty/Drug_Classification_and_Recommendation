@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condition Predictor</title>
+    <link rel="stylesheet" href="static/styles.css">  <!-- Link to CSS file -->
+    <script>
+        // JavaScript to validate the input field before form submission
+        function validateForm(event) {
+            var symptoms = document.getElementsByName("text")[0].value.trim();  // Get input value
+            if (symptoms === "") {
+                event.preventDefault();  // Prevent form submission if empty
+                alert("Please enter symptoms to predict the condition.");  // Show alert
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Condition Predictor</h1>
+            <p>Enter symptoms to predict the condition and get the top suggested drugs.</p>
+        </div>
+
+        <form action="/predict" method="post" class="form-container" onsubmit="validateForm(event)">
+            <textarea name="text" rows="6" cols="60" placeholder="Enter symptoms" class="textarea"></textarea><br>
+            <button type="submit" class="submit-btn">Predict Condition</button>
+        </form>
+    </div>
+</body>
+</html>
